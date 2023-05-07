@@ -8,7 +8,7 @@ const answerButtonContainer = document.querySelector(
   "#answer-buttons"
 ) as HTMLDivElement;
 const answerButtons = document.querySelectorAll(
-  ".answer-btn"
+  ".answer-buttons__btn"
 ) as NodeListOf<HTMLButtonElement>;
 const currentRoundElem = document.querySelector(
   "#current-round"

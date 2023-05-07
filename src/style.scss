@@ -11,9 +11,21 @@ body {
   text-align: center;
   margin: auto;
 }
-h1,
-p {
-  margin: 0;
+
+.answer-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 20px;
+  &__btn {
+    padding: 1em 1.5em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .container {
@@ -31,10 +43,51 @@ p {
   height: 85%;
   margin: auto;
 }
-.instructions-container {
+
+h1,
+p {
+  margin: 0;
+}
+
+.instructions {
   position: absolute;
   height: 100%;
   background-color: #fff;
+  &__heading {
+    font-family: "Changa One", sans-serif;
+    margin-top: 180px;
+    font-size: 4rem;
+  }
+  &__text {
+    padding: 40px;
+  }
+}
+
+.mute-btn {
+  position: relative;
+  min-width: 38px;
+  border: 1px solid #000;
+  background-color: #f5f2d0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.play-again-btn {
+  visibility: hidden;
+  padding: 1em 1.5em;
+  margin-top: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.speaker-icon {
+  margin-top: 40px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .start-game-btn {
@@ -63,71 +116,5 @@ p {
     color: $primaryPurple;
     background-color: $accentYellow;
     border: 4px solid $primaryPurple;
-  }
-}
-
-#answer-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-  gap: 20px;
-}
-
-.answer-btn {
-  padding: 1em 1.5em;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-.heading {
-  font-family: "Changa One", sans-serif;
-  margin-top: 60px;
-  font-size: 4rem;
-}
-
-.instructions {
-  &__text {
-    padding: 40px;
-  }
-}
-
-.start-game-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-#play-again-btn {
-  visibility: hidden;
-  padding: 1em 1.5em;
-  margin-top: 40px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.mute-btn {
-  position: relative;
-  min-width: 38px;
-  border: 1px solid #000;
-  background-color: #f5f2d0;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.speaker-icon {
-  margin-top: 40px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .container {
-    // min-width: 90%;
   }
 }

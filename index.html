@@ -11,15 +11,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="instructions-container" id="instructions-container">
-        <h1 class="heading">Gain Game</h1>
+      <div class="instructions" id="instructions-container">
+        <h1 class="instructions__heading">Gain Game</h1>
         <p class="instructions__text">
           How many decibels is the sound being reduced by?
         </p>
         <button id="start-game-btn" class="start-game-btn">Start Game</button>
       </div>
       <div id="score-container">
-        <p class="score-display">Score:</p>
+        <p>Score:</p>
         <p id="score">0</p>
       </div>
       <p>
@@ -27,11 +27,11 @@
         <span id="total-rounds"></span>
       </p>
 
-      <div id="answer-buttons">
-        <button class="answer-btn" id="answer-1-btn" value="answer1">
+      <div id="answer-buttons" class="answer-buttons">
+        <button class="answer-buttons__btn" id="answer-1-btn" value="answer1">
           Choose an answer
         </button>
-        <button class="answer-btn" id="answer-2-btn" value="answer2">
+        <button class="answer-buttons__btn" id="answer-2-btn" value="answer2">
           Choose an answer
         </button>
       </div>
@@ -44,8 +44,8 @@
           alt="mute button"
         />
       </div>
-      <div class="playAgainContainer">
-        <button id="play-again-btn">Play Again?</button>
+      <div>
+        <button id="play-again-btn" class="play-again-btn">Play Again?</button>
       </div>
     </div>
   </body>
