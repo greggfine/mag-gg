@@ -11,6 +11,10 @@ body {
   text-align: center;
   margin: auto;
 }
+h1,
+p {
+  margin: 0;
+}
 
 .container {
   background-color: #fff;
@@ -23,6 +27,9 @@ body {
   align-items: center;
   min-width: 50%;
   position: relative;
+  width: 85%;
+  height: 85%;
+  margin: auto;
 }
 .instructions-container {
   position: absolute;
@@ -42,6 +49,7 @@ body {
   transition: all 100ms ease-in;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 
   &:hover {
     cursor: pointer;
@@ -76,6 +84,14 @@ body {
 }
 .heading {
   font-family: "Changa One", sans-serif;
+  margin-top: 60px;
+  font-size: 4rem;
+}
+
+.instructions {
+  &__text {
+    padding: 40px;
+  }
 }
 
 .start-game-btn:disabled {
