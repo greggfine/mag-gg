@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gain Game</title>
+    <link rel="stylesheet" href="./src/style.scss" />
+    <link rel="shortcut icon" href="#" />
+    <script src="./src/app.ts" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="instructions-container" id="instructions-container">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam,
+          perspiciatis!
+        </p>
+        <button id="start-game-btn" class="start-game-btn">Start Game</button>
+      </div>
+      <h1 class="heading">Gain Game</h1>
+      <p>How many decibels is the sound being reduced by?</p>
+      <div id="score-container">
+        <p class="score-display">Score:</p>
+        <p id="score">0</p>
+      </div>
+      <p>
+        Round <span id="current-round"></span> of
+        <span id="total-rounds"></span>
+      </p>
+
+      <div id="answer-buttons">
+        <button class="answer-btn" id="answer-1-btn" value="answer1">
+          Choose an answer
+        </button>
+        <button class="answer-btn" id="answer-2-btn" value="answer2">
+          Choose an answer
+        </button>
+      </div>
+
+      <div id="audio-controls">
+        <img
+          id="mute-btn"
+          class="speaker-icon"
+          src="images/speaker.svg"
+          alt="mute button"
+        />
+      </div>
+      <div class="playAgainContainer">
+        <button id="play-again-btn">Play Again?</button>
+      </div>
+    </div>
+  </body>
+</html>
