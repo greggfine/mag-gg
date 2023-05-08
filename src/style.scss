@@ -51,12 +51,39 @@ p {
 
 .instructions {
   position: absolute;
-  height: 100%;
+  min-height: 100vh;
   background-color: #fff;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  &__content-container {
+    flex-grow: 1;
+  }
   &__heading {
     font-family: "Changa One", sans-serif;
-    margin-top: 180px;
+    margin-top: 130px;
     font-size: 4rem;
+  }
+  &__image-container {
+    &__image {
+      background-image: url("/images/alexey-ruban-73o_FzZ5x-w-unsplash.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 50%;
+      width: 100%;
+      min-height: 20vh;
+      filter: grayscale(100%);
+    }
+    &__image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $overlayPurple;
+      z-index: 0;
+    }
   }
   &__text {
     padding: 40px;
@@ -107,7 +134,7 @@ p {
   transition: all 100ms ease-in;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 40px;
 
   &:hover {
     cursor: pointer;
