@@ -21,6 +21,7 @@ const playAgainButton = document.querySelector(
   "#play-again-btn"
 ) as HTMLButtonElement;
 const muteButton = document.querySelector("#mute-btn") as HTMLImageElement;
+const waveform = document.getElementById("waveform") as HTMLImageElement;
 
 // Audio Objects
 const correctAnswerSound = new Audio("./audio/correctAnswer.wav");
@@ -34,6 +35,7 @@ let score = 0;
 
 function initiateRound() {
   startGameButton.disabled = true;
+  waveform.style.display = "block";
   if (roundCount <= maxRounds) {
     updateRoundDisplay();
     roundCount++;
@@ -41,6 +43,7 @@ function initiateRound() {
     displayAnswers(correctAnswer, wrongAnswer);
     playAudio("audio/pop.mp3", randomGainVal, 2);
   } else {
+    waveform.style.display = "none";
     playAgainButton.style.visibility = "visible";
     playAgainButton.addEventListener("click", resetGame);
   }
@@ -89,6 +92,7 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
   gainNode.connect(ctx.destination);
 
   const answerButtonClickHandler = (e: MouseEvent) => {
+    waveform.style.display = "none";
     const clickedButton = e.target as HTMLButtonElement;
     if (clickedButton.dataset.answer === "correct") {
       clickedButton.style.backgroundColor = "green";
