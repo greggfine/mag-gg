@@ -25,6 +25,23 @@
           <div class="instructions__image-container__image"></div>
         </div>
       </div>
+
+      <div class="score-and-round">
+        <div class="score-round-wrapper">
+          <div id="score-container" class="score-container">
+            <img src="images/score.svg" alt="score" class="score-icon" />
+            <p id="score" class="score-display">0</p>
+          </div>
+          <div class="round-container">
+            <img src="images/round.svg" alt="round" class="round-icon" />
+            <p class="round-display">
+              <span id="current-round"></span>/
+              <span id="total-rounds"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <lottie-player
         loop
         autoplay
@@ -35,17 +52,6 @@
         class="waveform"
       >
       </lottie-player>
-
-      <div id="score-container">
-        <img src="images/score.svg" alt="score" class="score-icon" />
-        <p id="score">0</p>
-      </div>
-      <img src="images/round.svg" alt="round" class="round-icon" />
-      <p>
-        <span id="current-round"></span>/
-        <span id="total-rounds"></span>
-      </p>
-
       <div id="answer-buttons" class="answer-buttons">
         <button class="answer-buttons__btn" id="answer-1-btn" value="answer1">
           Choose an answer
