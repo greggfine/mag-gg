@@ -52,12 +52,13 @@ p {
 .gain-comparison {
   margin-top: 40px;
   display: flex;
-  width: 200px;
+  width: 340px;
   justify-content: space-between;
+  gap: 10px;
 
-  &__btn {
-    padding: 10px;
-  }
+  // &__btn {
+  //   padding: 10px;
+  // }
 }
 .instructions {
   position: absolute;
@@ -173,11 +174,12 @@ p {
   }
 }
 
-.start-game-btn {
+.start-game-btn,
+.gain-comparison__btn {
   color: #fff;
   background-color: $primaryPurple;
   border-radius: 8px;
-  padding: 0.5em 1.25em;
+  padding: 1em 1.25em;
   font-size: 1.1rem;
   min-width: 120px;
   width: 160px;
@@ -206,7 +208,4 @@ p {
   display: none;
   margin-top: 20px;
   width: 150px;
-}
-.waveform path {
-  // fill: white;
 }
