@@ -12,6 +12,12 @@ body {
   margin: auto;
 }
 
+.audio-controls {
+  height: 100px;
+  width: 100px;
+  margin-top: 60px;
+}
+
 .answer-buttons {
   display: flex;
   justify-content: space-between;
@@ -168,7 +174,14 @@ p {
 }
 
 .speaker-icon {
-  margin-top: 40px;
+  // margin-top: 40px;
+  // border: 1px solid #000;
+  border-radius: 8px;
+  padding: 10px;
+  width: 36px;
+  // position: absolute;
+  // bottom: 0;
+  // right: 20%;
   &:hover {
     cursor: pointer;
   }
