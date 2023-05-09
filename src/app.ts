@@ -36,6 +36,7 @@ let score = 0;
 function initiateRound() {
   startGameButton.disabled = true;
   waveform.style.display = "block";
+  waveform.style.visibility = "visible";
   if (roundCount <= maxRounds) {
     updateRoundDisplay();
     roundCount++;
@@ -43,7 +44,7 @@ function initiateRound() {
     displayAnswers(correctAnswer, wrongAnswer);
     playAudio("audio/pop.mp3", randomGainVal, 2);
   } else {
-    waveform.style.display = "none";
+    waveform.style.visibility = "hidden";
     playAgainButton.style.visibility = "visible";
     playAgainButton.addEventListener("click", resetGame);
   }
@@ -92,7 +93,7 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
   gainNode.connect(ctx.destination);
 
   const answerButtonClickHandler = (e: MouseEvent) => {
-    waveform.style.display = "none";
+    waveform.style.visibility = "hidden";
     const clickedButton = e.target as HTMLButtonElement;
     if (clickedButton.dataset.answer === "correct") {
       clickedButton.style.backgroundColor = "green";
