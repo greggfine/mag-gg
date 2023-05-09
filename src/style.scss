@@ -43,6 +43,16 @@ p {
   margin: 0;
 }
 
+.gain-comparison {
+  margin-top: 40px;
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+
+  &__btn {
+    padding: 10px;
+  }
+}
 .instructions {
   position: absolute;
   min-height: 100vh;
