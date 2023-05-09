@@ -60,9 +60,19 @@ p {
     flex-grow: 1;
   }
   &__heading {
-    font-family: "Changa One", sans-serif;
     margin-top: 130px;
     font-size: 4rem;
+    color: $primaryPurple;
+    text-align: center;
+    line-height: 1;
+    font-family: "Changa One", sans-serif;
+    max-width: 400px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(290deg, #2420ad, blue);
+    color: transparent;
+    margin-left: auto;
+    margin-right: auto;
   }
   &__image-container {
     &__image {
