@@ -14,13 +14,19 @@ body {
 
 .answer-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 40px;
   gap: 20px;
+  max-width: 450px;
   &__btn {
-    padding: 1em 1.5em;
+    padding: 0.5em;
+    min-width: 150px;
+    font-size: 4rem;
+    background-color: #e6e09f;
+    color: #151448;
+    border-radius: 8px;
 
     &:hover {
       cursor: pointer;
