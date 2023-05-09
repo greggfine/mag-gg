@@ -154,7 +154,14 @@ class Instructions {
   }
 
   private startGame(): void {
-    this.instructionsContainer.style.display = "none";
+    this.instructionsContainer.style.transition = "all 0.5s ease";
+    setTimeout(() => {
+      this.instructionsContainer.style.opacity = "0";
+      setTimeout(() => {
+        this.instructionsContainer.style.display = "none";
+        this.instructionsContainer.style.opacity = "1";
+      }, 500);
+    }, 0);
     initiateRound();
   }
 }
