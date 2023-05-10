@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://greggfine.github.io/mag-gg",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "sass": "^1.62.1",
@@ -14,6 +16,7 @@
     "vite": "^4.3.2"
   },
   "dependencies": {
-    "@lottiefiles/lottie-player": "^1.7.1"
+    "@lottiefiles/lottie-player": "^1.7.1",
+    "gh-pages": "^5.0.0"
   }
 }
