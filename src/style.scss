@@ -143,6 +143,14 @@ p {
   }
 }
 
+.play-again-container {
+  visibility: hidden;
+  &__final-score {
+    font-size: 3rem;
+    margin-bottom: 60px;
+  }
+}
+
 .round-icon,
 .score-icon {
   width: 26px;
@@ -184,6 +192,7 @@ p {
 }
 
 .start-game-btn,
+.play-again-btn,
 .gain-comparison__btn {
   color: #fff;
   background-color: $primaryPurple;

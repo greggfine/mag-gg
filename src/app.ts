@@ -28,6 +28,12 @@ const beforeGainBtn = document.getElementById(
 const afterGainBtn = document.getElementById(
   "after-gain-btn"
 ) as HTMLButtonElement;
+const playAgainContainer = document.getElementById(
+  "play-again-container"
+) as HTMLDivElement;
+const finalScoreDisplay = document.getElementById(
+  "final-score-display"
+) as HTMLSpanElement;
 
 // Audio Objects
 const correctAnswerSound = new Audio("./audio/correctAnswer.wav");
@@ -35,7 +41,7 @@ const wrongAnswerSound = new Audio("./audio/wrongAnswer.wav");
 const ctx = new AudioContext();
 
 // Game Settings
-const maxRounds = 3;
+const maxRounds = 5;
 let roundCount = 1;
 let score = 0;
 
@@ -44,15 +50,29 @@ function initiateRound() {
   waveform.style.display = "block";
   waveform.style.visibility = "visible";
   if (roundCount <= maxRounds) {
+    muteButton.style.display = "block";
+    beforeGainBtn.style.display = "block";
+    afterGainBtn.style.display = "block";
+    answerButtons.forEach((btn) => {
+      btn.style.display = "block";
+    });
     updateRoundDisplay();
     roundCount++;
     const { correctAnswer, wrongAnswer, randomGainVal } = generateAnswers();
     displayAnswers(correctAnswer, wrongAnswer);
     playAudio("audio/pop.mp3", randomGainVal, 2);
   } else {
+    muteButton.style.display = "none";
+    finalScoreDisplay.textContent = score.toString();
     waveform.style.visibility = "hidden";
     playAgainButton.style.visibility = "visible";
+    playAgainContainer.style.visibility = "visible";
     playAgainButton.addEventListener("click", resetGame);
+    beforeGainBtn.style.display = "none";
+    afterGainBtn.style.display = "none";
+    answerButtons.forEach((btn) => {
+      btn.style.display = "none";
+    });
   }
 }
 
@@ -141,13 +161,15 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
 
 function resetGame() {
   playAgainButton.style.visibility = "hidden";
+  playAgainContainer.style.visibility = "hidden";
+
   answerButtons.forEach((btn) => {
     btn.style.backgroundColor = "";
-    startGameButton.disabled = false;
-    roundCount = 1;
-    score = 0;
-    scoreElem.textContent = score.toString();
   });
+  roundCount = 1;
+  score = 0;
+  scoreElem.textContent = score.toString();
+  initiateRound();
 }
 
 class Instructions {
