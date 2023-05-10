@@ -41,7 +41,7 @@ const wrongAnswerSound = new Audio("./audio/wrongAnswer.wav");
 const ctx = new AudioContext();
 
 // Game Settings
-const maxRounds = 5;
+const maxRounds = 3;
 let roundCount = 1;
 let score = 0;
 
@@ -137,10 +137,9 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
       wrongAnswerSound.play();
     }
     audioSource.pause();
-    answerButtonContainer.removeEventListener(
-      "click",
-      answerButtonClickHandler
-    );
+    answerButtons.forEach((btn) => {
+      btn.removeEventListener("click", answerButtonClickHandler);
+    });
     setTimeout(initiateRound, duration * 1000);
   };
 
@@ -153,7 +152,9 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
     }
   };
 
-  answerButtonContainer.addEventListener("click", answerButtonClickHandler);
+  answerButtons.forEach((btn) => {
+    btn.addEventListener("click", answerButtonClickHandler);
+  });
 
   muteButton.removeEventListener("click", toggleSound);
   muteButton.addEventListener("click", toggleSound);
