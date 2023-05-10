@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gain Game</title>
+    
+    <link rel="shortcut icon" href="#" />
+    <script src="/node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
+
+    
+    <script type="module" crossorigin src="/assets/index-eac16fd3.js"></script>
+    <link rel="stylesheet" href="/assets/index-d19fc96e.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="instructions" id="instructions-container">
+        <div class="instructions__content-container">
+          <h1 class="instructions__heading">Gain Game</h1>
+          <p class="instructions__text">
+            How many decibels is the sound being reduced by?
+          </p>
+          <button id="start-game-btn" class="start-game-btn">Start Game</button>
+        </div>
+        <div class="instruction__image-container">
+          <div class="instructions__image-container__image"></div>
+        </div>
+      </div>
+
+      <div class="score-and-round">
+        <div class="score-round-wrapper">
+          <div id="score-container" class="score-container">
+            <img src="images/score.svg" alt="score" class="score-icon" />
+            <p id="score" class="score-display">0</p>
+          </div>
+          <div class="round-container">
+            <img src="images/round.svg" alt="round" class="round-icon" />
+            <p class="round-display">
+              <span id="current-round"></span>/
+              <span id="total-rounds"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <lottie-player
+        loop
+        autoplay
+        mode="normal"
+        src="images/60021-audio-grey.json"
+        id="waveform"
+        class="waveform"
+      >
+      </lottie-player>
+      <div id="answer-buttons" class="answer-buttons">
+        <button class="answer-buttons__btn" id="answer-1-btn" value="answer1">
+          Choose an answer
+        </button>
+        <button class="answer-buttons__btn" id="answer-2-btn" value="answer2">
+          Choose an answer
+        </button>
+      </div>
+
+      <div class="gain-comparison">
+        <button class="gain-comparison__btn" id="before-gain-btn">
+          Before Gain
+        </button>
+        <button class="gain-comparison__btn" id="after-gain-btn">
+          After Gain
+        </button>
+      </div>
+
+      <div id="audio-controls" class="audio-controls">
+        <img
+          id="mute-btn"
+          class="speaker-icon"
+          src="images/speaker.svg"
+          alt="mute button"
+        />
+      </div>
+      <div>
+        <button id="play-again-btn" class="play-again-btn">Play Again?</button>
+      </div>
+    </div>
+  </body>
+</html>
