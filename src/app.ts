@@ -4,9 +4,6 @@ import { generateRandomGainVal } from "./utilities";
 const startGameButton = document.querySelector(
   "#start-game-btn"
 ) as HTMLButtonElement;
-const answerButtonContainer = document.querySelector(
-  "#answer-buttons"
-) as HTMLDivElement;
 const answerButtons = document.querySelectorAll(
   ".answer-buttons__btn"
 ) as NodeListOf<HTMLButtonElement>;
