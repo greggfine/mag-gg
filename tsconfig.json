@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./mag-gg",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
