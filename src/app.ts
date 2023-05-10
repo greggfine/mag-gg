@@ -69,6 +69,7 @@ function displayAnswers(correctAnswer: number, wrongAnswer: number) {
   const correctButtonIndex = Math.round(Math.random());
   answerButtons.forEach((button, index) => {
     button.style.backgroundColor = "";
+    button.style.color = "#000";
     if (index === correctButtonIndex) {
       button.textContent = correctAnswer.toString();
       button.dataset.answer = "correct";
@@ -97,11 +98,13 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
     const clickedButton = e.target as HTMLButtonElement;
     if (clickedButton.dataset.answer === "correct") {
       clickedButton.style.backgroundColor = "green";
+      clickedButton.style.color = "#fff";
       score += 1;
       scoreElem.textContent = score.toString();
       correctAnswerSound.play();
     } else {
       clickedButton.style.backgroundColor = "red";
+      clickedButton.style.color = "#fff";
       wrongAnswerSound.play();
     }
     audioSource.pause();
