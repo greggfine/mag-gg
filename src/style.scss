@@ -63,9 +63,9 @@ p {
   justify-content: space-between;
   gap: 10px;
 
-  // &__btn {
-  //   padding: 10px;
-  // }
+  &__btn {
+    text-underline-offset: 6px;
+  }
 }
 .instructions {
   position: absolute;

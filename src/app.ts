@@ -22,6 +22,12 @@ const playAgainButton = document.querySelector(
 ) as HTMLButtonElement;
 const muteButton = document.querySelector("#mute-btn") as HTMLImageElement;
 const waveform = document.getElementById("waveform") as HTMLImageElement;
+const beforeGainBtn = document.getElementById(
+  "before-gain-btn"
+) as HTMLButtonElement;
+const afterGainBtn = document.getElementById(
+  "after-gain-btn"
+) as HTMLButtonElement;
 
 // Audio Objects
 const correctAnswerSound = new Audio("./audio/correctAnswer.wav");
@@ -88,7 +94,10 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
   const audioStream = ctx.createMediaElementSource(audioSource);
   const gainNode = ctx.createGain();
   gainNode.gain.value = 1;
-  gainComparison.toggleGainChange(gainNode, randomGainVal, ctx.currentTime);
+  toggleGainChange(gainNode, randomGainVal, ctx.currentTime);
+  beforeGainBtn.style.color = "#fff";
+  beforeGainBtn.style.textDecoration = "underline";
+  afterGainBtn.style.color = "#c6c0c0";
   audioSource.play();
   audioStream.connect(gainNode);
   gainNode.connect(ctx.destination);
@@ -172,33 +181,28 @@ class Instructions {
 
 new Instructions();
 
-class GainComparison {
-  public beforeGainBtn: HTMLButtonElement;
-  public afterGainBtn: HTMLButtonElement;
-  constructor() {
-    this.beforeGainBtn = document.getElementById(
-      "before-gain-btn"
-    ) as HTMLButtonElement;
-    this.afterGainBtn = document.getElementById(
-      "after-gain-btn"
-    ) as HTMLButtonElement;
-  }
-  public toggleGainChange(
-    gainNode: GainNode,
-    randomGainVal: number,
-    currTime: number
-  ) {
-    this.afterGainBtn.addEventListener("click", () => {
-      if (gainNode.gain.value === 1) {
-        gainNode.gain.setValueAtTime(randomGainVal, currTime);
-      }
-    });
-    this.beforeGainBtn.addEventListener("click", () => {
-      if (gainNode.gain.value !== 1) {
-        gainNode.gain.setValueAtTime(1, currTime);
-      }
-    });
-  }
-}
+function toggleGainChange(
+  gainNode: GainNode,
+  randomGainVal: number,
+  currTime: number
+) {
+  afterGainBtn.addEventListener("click", () => {
+    if (gainNode.gain.value === 1) {
+      gainNode.gain.setValueAtTime(randomGainVal, currTime);
+    }
 
-const gainComparison = new GainComparison();
+    afterGainBtn.style.color = "#fff";
+    afterGainBtn.style.textDecoration = "underline";
+    beforeGainBtn.style.color = "#c6c0c0";
+    beforeGainBtn.style.textDecoration = "none";
+  });
+  beforeGainBtn.addEventListener("click", () => {
+    if (gainNode.gain.value !== 1) {
+      gainNode.gain.setValueAtTime(1, currTime);
+    }
+    afterGainBtn.style.color = "#c6c0c0";
+    afterGainBtn.style.textDecoration = "none";
+    beforeGainBtn.style.color = "#fff";
+    beforeGainBtn.style.textDecoration = "underline";
+  });
+}
