@@ -170,8 +170,8 @@ function playAudio(audioSrc: string, randomGainVal: number, duration: number) {
 }
 
 function resetGame() {
-  playAgainButton.style.visibility = "hidden";
   playAgainContainer.style.visibility = "hidden";
+  playAgainButton.style.display = "none";
 
   answerButtons.forEach((btn) => {
     btn.style.backgroundColor = "";
