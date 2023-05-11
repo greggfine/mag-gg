@@ -45,7 +45,7 @@ const audioFiles = [
 let currAudioFileIndex = 0;
 
 // Game Settings
-const maxRounds = 1;
+const maxRounds = 4;
 let roundCount = 1;
 let score = 0;
 
