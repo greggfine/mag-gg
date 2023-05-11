@@ -10,8 +10,8 @@
     
 
     
-    <script type="module" crossorigin src="/mag-gg/assets/index-7c764ad7.js"></script>
-    <link rel="stylesheet" href="/mag-gg/assets/index-bdd8589d.css">
+    <script type="module" crossorigin src="/mag-gg/assets/index-5f19adf4.js"></script>
+    <link rel="stylesheet" href="/mag-gg/assets/index-a62fbb32.css">
   </head>
   <body>
     <div class="container">
@@ -54,12 +54,16 @@
       >
       </lottie-player>
       <div id="answer-buttons" class="answer-buttons">
-        <button class="answer-buttons__btn" id="answer-1-btn" value="answer1">
-          Choose an answer
-        </button>
-        <button class="answer-buttons__btn" id="answer-2-btn" value="answer2">
-          Choose an answer
-        </button>
+        <button
+          class="answer-buttons__btn"
+          id="answer-1-btn"
+          value="answer1"
+        ></button>
+        <button
+          class="answer-buttons__btn"
+          id="answer-2-btn"
+          value="answer2"
+        ></button>
       </div>
 
       <div class="gain-comparison">
@@ -71,6 +75,12 @@
         </button>
       </div>
 
+      <div class="play-again-container" id="play-again-container">
+        <div class="play-again-container__final-score">
+          Final Score: <span id="final-score-display"></span>
+        </div>
+        <button id="play-again-btn" class="play-again-btn">Play Again?</button>
+      </div>
       <div id="audio-controls" class="audio-controls">
         <img
           id="mute-btn"
@@ -78,9 +88,6 @@
           src="images/speaker.svg"
           alt="mute button"
         />
-      </div>
-      <div>
-        <button id="play-again-btn" class="play-again-btn">Play Again?</button>
       </div>
     </div>
   </body>

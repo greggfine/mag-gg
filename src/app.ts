@@ -36,6 +36,13 @@ const finalScoreDisplay = document.getElementById(
 const correctAnswerSound = new Audio("./audio/correctAnswer.wav");
 const wrongAnswerSound = new Audio("./audio/wrongAnswer.wav");
 const ctx = new AudioContext();
+const audioFilePath = "audio/";
+const audioFiles = [
+  `${audioFilePath}nena.mp3`,
+  `${audioFilePath}pop.mp3`,
+  `${audioFilePath}zoller.mp3`,
+];
+let currAudioFileIndex = 0;
 
 // Game Settings
 const maxRounds = 3;
@@ -57,7 +64,12 @@ function initiateRound() {
     roundCount++;
     const { correctAnswer, wrongAnswer, randomGainVal } = generateAnswers();
     displayAnswers(correctAnswer, wrongAnswer);
-    playAudio("audio/pop.mp3", randomGainVal, 2);
+    if (currAudioFileIndex < audioFiles.length) {
+      playAudio(audioFiles[currAudioFileIndex++], randomGainVal, 2);
+    } else {
+      currAudioFileIndex = 0;
+      playAudio(audioFiles[currAudioFileIndex++], randomGainVal, 2);
+    }
   } else {
     muteButton.style.display = "none";
     finalScoreDisplay.textContent = score.toString();
