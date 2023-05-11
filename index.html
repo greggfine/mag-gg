@@ -24,7 +24,7 @@
           </p>
           <button id="start-game-btn" class="start-game-btn">Start Game</button>
         </div>
-        <div class="instructions__image-container">
+        <div class="instruction__image-container">
           <div class="instructions__image-container__image"></div>
         </div>
       </div>
@@ -45,36 +45,37 @@
         </div>
       </div>
 
-      <lottie-player
-        loop
-        autoplay
-        mode="normal"
-        src="images/60021-audio-grey.json"
-        id="waveform"
-        class="waveform"
-      >
-      </lottie-player>
-      <div id="answer-buttons" class="answer-buttons">
-        <button
-          class="answer-buttons__btn"
-          id="answer-1-btn"
-          value="answer1"
-        ></button>
-        <button
-          class="answer-buttons__btn"
-          id="answer-2-btn"
-          value="answer2"
-        ></button>
-      </div>
-
-      <div class="gain-comparison">
-        <button class="gain-comparison__btn" id="before-gain-btn">
-          Before Gain
-        </button>
-        <button class="gain-comparison__btn" id="after-gain-btn">
-          After Gain
-        </button>
-      </div>
+      <div class="gameplay-container">
+		<lottie-player
+		  loop
+		  autoplay
+		  mode="normal"
+		  src="images/60021-audio-grey.json"
+		  id="waveform"
+		  class="waveform"
+		>
+		</lottie-player>
+		<div id="answer-buttons" class="answer-buttons">
+		  <button
+			class="answer-buttons__btn"
+			id="answer-1-btn"
+			value="answer1"
+		  ></button>
+		  <button
+			class="answer-buttons__btn"
+			id="answer-2-btn"
+			value="answer2"
+		  ></button>
+		</div>
+		<div class="gain-comparison">
+		  <button class="gain-comparison__btn" id="before-gain-btn">
+			Before Gain
+		  </button>
+		  <button class="gain-comparison__btn" id="after-gain-btn">
+			After Gain
+		  </button>
+		</div>
+	  </div>
 
       <div class="play-again-container" id="play-again-container">
         <div class="play-again-container__final-score">
