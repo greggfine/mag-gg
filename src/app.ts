@@ -74,7 +74,7 @@ function initiateRound() {
     muteButton.style.display = "none";
     finalScoreDisplay.textContent = score.toString();
     waveform.style.visibility = "hidden";
-    playAgainButton.style.visibility = "visible";
+    playAgainButton.style.display = "block";
     playAgainContainer.style.visibility = "visible";
     playAgainButton.addEventListener("click", resetGame);
     beforeGainBtn.style.display = "none";
