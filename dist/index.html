@@ -10,8 +10,8 @@
     
 
     
-    <script type="module" crossorigin src="/mag-gg/assets/index-5f19adf4.js"></script>
-    <link rel="stylesheet" href="/mag-gg/assets/index-a62fbb32.css">
+    <script type="module" crossorigin src="/assets/index-5f17fc8c.js"></script>
+    <link rel="stylesheet" href="/assets/index-ff33e606.css">
   </head>
   <body>
     <div class="container">
@@ -44,50 +44,56 @@
         </div>
       </div>
 
-      <lottie-player
-        loop
-        autoplay
-        mode="normal"
-        src="images/60021-audio-grey.json"
-        id="waveform"
-        class="waveform"
-      >
-      </lottie-player>
-      <div id="answer-buttons" class="answer-buttons">
-        <button
-          class="answer-buttons__btn"
-          id="answer-1-btn"
-          value="answer1"
-        ></button>
-        <button
-          class="answer-buttons__btn"
-          id="answer-2-btn"
-          value="answer2"
-        ></button>
-      </div>
-
-      <div class="gain-comparison">
-        <button class="gain-comparison__btn" id="before-gain-btn">
-          Before Gain
-        </button>
-        <button class="gain-comparison__btn" id="after-gain-btn">
-          After Gain
-        </button>
-      </div>
-
-      <div class="play-again-container" id="play-again-container">
-        <div class="play-again-container__final-score">
-          Final Score: <span id="final-score-display"></span>
+      <div class="gameplay-container">
+        <lottie-player
+          loop
+          autoplay
+          mode="normal"
+          src="images/60021-audio-grey.json"
+          id="waveform"
+          class="waveform"
+        >
+        </lottie-player>
+        <div id="answer-buttons" class="answer-buttons">
+          <button
+            class="answer-buttons__btn"
+            id="answer-1-btn"
+            value="answer1"
+          ></button>
+          <button
+            class="answer-buttons__btn"
+            id="answer-2-btn"
+            value="answer2"
+          ></button>
         </div>
-        <button id="play-again-btn" class="play-again-btn">Play Again?</button>
-      </div>
-      <div id="audio-controls" class="audio-controls">
-        <img
-          id="mute-btn"
-          class="speaker-icon"
-          src="images/speaker.svg"
-          alt="mute button"
-        />
+        <div class="gain-comparison">
+          <button class="gain-comparison__btn" id="before-gain-btn">
+            Pre Gain
+          </button>
+          <button class="gain-comparison__btn" id="after-gain-btn">
+            Post Gain
+          </button>
+        </div>
+        <div id="audio-controls" class="audio-controls">
+          <img
+            id="mute-btn"
+            class="mute-btn"
+            src="images/speaker.svg"
+            alt="mute button"
+          />
+        </div>
+        <div class="play-again-container" id="play-again-container">
+          <div class="play-again-container__final-score">
+            Final Score:
+            <span
+              class="play-again-container__final-score-display"
+              id="final-score-display"
+            ></span>
+          </div>
+          <button id="play-again-btn" class="play-again-btn">
+            Play Again?
+          </button>
+        </div>
       </div>
     </div>
   </body>

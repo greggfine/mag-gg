@@ -106,10 +106,10 @@ function displayAnswers(correctAnswer: number, wrongAnswer: number) {
     button.style.backgroundColor = "";
     button.style.color = "#000";
     if (index === correctButtonIndex) {
-      button.textContent = correctAnswer.toString();
+      button.textContent = `-${(correctAnswer * 10).toString()}dB`;
       button.dataset.answer = "correct";
     } else {
-      button.textContent = wrongAnswer.toString();
+      button.textContent = `-${(wrongAnswer * 10).toString()}dB`;
       button.dataset.answer = "wrong";
     }
   });
